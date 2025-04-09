@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diablo2BinToTxtConverter", "Diablo2BinToTxtConverter\Diablo2BinToTxtConverter.csproj", "{9CF53A3A-74B9-4FA0-83E3-CCF1CCA988F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{EE46F1AB-5706-4AAD-8386-468CCB9129B3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CF53A3A-74B9-4FA0-83E3-CCF1CCA988F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF53A3A-74B9-4FA0-83E3-CCF1CCA988F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF53A3A-74B9-4FA0-83E3-CCF1CCA988F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF53A3A-74B9-4FA0-83E3-CCF1CCA988F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
