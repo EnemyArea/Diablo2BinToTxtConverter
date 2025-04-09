@@ -12,7 +12,7 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
 
         public IDictionary<string, string> GetKeyFilePaths()
         {
-            return new Dictionary<string, string> { { "shrines", "data\\local\\lng\\strings\\shrines.json" } };
+            return new Dictionary<string, string> { { "shrines", @"data\local\lng\strings\shrines.json" } };
         }
 
         public IEnumerable<ITypeDef> GetTypeDefinitions()
@@ -28,8 +28,12 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 new UInt32TypeDef("Duration in frames"),
                 new UInt16TypeDef("reset time in minutes"),
                 new UnusedTypeDef("rarity"),
-                new UInt16TypeDef("StringName"),
-                new UInt16TypeDef("StringPhrase"),
+                new KeyedTypeDef("StringName", [
+                    "shrines"
+                ], typeof(ushort), "dummy"),
+                new KeyedTypeDef("StringPhrase", [
+                    "shrines"
+                ], typeof(ushort), "dummy"),
                 new UInt16TypeDef("effectclass"),
                 new UInt32TypeDef("LevelMin")
             ];

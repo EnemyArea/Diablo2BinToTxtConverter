@@ -2,22 +2,15 @@
 
 namespace Diablo2BinToTxtConverter
 {
-    internal sealed record BinFile
+    internal sealed class BinFile(string rootPath, IBinFileDefinition binFileDefinition)
     {
-        public BinFile(string rootPath, IBinFileDefinition binFileDefinition)
-        {
-            RootPath = rootPath;
-            FilePath = Path.Combine(rootPath, "data\\global\\excel", binFileDefinition.GetBinFilePath());
-            KeyFilePaths = binFileDefinition.GetKeyFilePaths();
-            TypeDef = binFileDefinition.GetTypeDefinitions();
-            Columns = binFileDefinition.GetColumnDefinitions();
-        }
+        public string RootPath { get; } = rootPath;
 
-        public string RootPath { get; }
+        public string FilePath { get; } =
+            Path.Combine(rootPath, @"data\global\excel", binFileDefinition.GetBinFilePath());
 
-        public string FilePath { get; }
-        public IDictionary<string, string> KeyFilePaths { get; }
-        public IEnumerable<ITypeDef> TypeDef { get; }
-        public IEnumerable<string> Columns { get; }
+        public IDictionary<string, string> KeyFilePaths { get; } = binFileDefinition.GetKeyFilePaths();
+        public IEnumerable<ITypeDef> TypeDef { get; } = binFileDefinition.GetTypeDefinitions();
+        public IEnumerable<string> Columns { get; } = binFileDefinition.GetColumnDefinitions();
     }
 }

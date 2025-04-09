@@ -2,11 +2,12 @@
 
 namespace Diablo2BinToTxtConverter
 {
-    internal sealed class ParseFile(BinFile binFile, IEnumerable<ParsedLine> parsedLines)
+    internal sealed class ParsedBinFile(BinFile binFile, IEnumerable<ParsedLine> parsedLines)
     {
         private string ColumnsToString()
         {
             StringBuilder sb = new();
+
             foreach (string? column in binFile.Columns)
             {
                 sb.Append($"{column}\t");
@@ -18,6 +19,7 @@ namespace Diablo2BinToTxtConverter
         private string ValuesToString(ParsedLine parsedLine)
         {
             StringBuilder sb = new();
+
             foreach (string? column in binFile.Columns)
             {
                 ParsedLine.ValuePair value = parsedLine.Values.First(x => x.Key == column);

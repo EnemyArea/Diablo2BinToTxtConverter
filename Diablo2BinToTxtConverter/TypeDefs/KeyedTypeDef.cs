@@ -5,8 +5,5 @@
         IEnumerable<string> KeyFilePaths,
         Type Type,
         object? NullValue = null)
-        : ITypeDef
-    {
-        public object? NullValue { get; } = NullValue;
-    }
+        : ITypeDef;
 }

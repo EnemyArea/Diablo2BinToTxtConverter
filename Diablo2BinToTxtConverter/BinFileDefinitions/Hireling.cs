@@ -13,8 +13,7 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
         {
             return new Dictionary<string, string>
             {
-                { "ui", "data\\local\\lng\\strings\\ui.json" },
-                { "skills", "data\\local\\lng\\strings\\skills.json" }
+                { "ui", @"data\local\lng\strings\ui.json" }, { "skills", @"data\local\lng\strings\skills.json" }
             };
         }
 
