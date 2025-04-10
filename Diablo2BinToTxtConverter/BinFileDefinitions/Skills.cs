@@ -19,198 +19,215 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
 
         public IEnumerable<ITypeDef> GetTypeDefinitions()
         {
+            int intIndex = 0;
             // (Magic Arrow) 06 00 4D 61 67 69 63 20 41 72 72 6F 77 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 04 0B C0 80 02 00 00 00 00 00 00 07 0E 07 00 02 00 00 00 2F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 00 1B 00 FF FF FF FF FF FF FF FF 00 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00 00 FF FF 00 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 FF FF 1B 00 FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 FF FF 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 00 FF FF 00 00 FF FF FF FF 14 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 01 00 00 00 00 00 00 00 00 00 FF FF FF FF FF FF 00 00 00 00 05 00 0C 00 FF FF 00 00 00 00 00 00 FF FF FF FF FF FF FF FF 06 00 00 00 0A 00 00 00 09 00 00 00 FF FF FF FF 08 80 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 FF FF FF FF FF FF 00 00 00 00 00 01 00 00 E8 03 00 00 00 00 00 00 00 00 00 00 07 00
+            // (Whirlwind) 97 00 57 68 69 72 6C 77 69 6E 64 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 14 16 50 80 00 00 00 04 00 00 00 12 0E 07 0A 00 00 00 00 2E 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 26 00 4C 00 00 00 00 00 00 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF AE 00 FF FF FF FF FF FF FF FF 00 00 00 00 00 00 FF FF 00 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 FF FF FF FF FF FF FF FF FF FF FF FF 1F 00 2D 00 00 00 00 00 00 00 E3 09 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 FF FF 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 00 FF FF 00 00 FF FF FF FF 14 00 00 00 00 00 00 00 00 00 00 00 3C 0F 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 1E 00 00 00 05 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 FF FF FF FF 1E 00 00 00 00 00 00 00 00 00 8F 00 90 00 FF FF 00 00 01 00 07 00 19 00 01 00 00 00 03 00 00 00 FF FF FF FF FF FF FF FF 97 00 00 00 32 00 00 00 05 00 00 00 FF FF FF FF 08 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 FF FF FF FF FF FF 00 00 00 00 80 03 00 00 00 FA 00 00 00 00 01 00 01 00 00 00
             return
             [
                 new Int16TypeDef("*Id"), // 06 00
                 new StringTypeDef("skill",
                     34), // 4D 61 67 69 63 20 41 72 72 6F 77 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 
-                new Int8TypeDef("unknown-00"), // 00
+                new Int8TypeDef("unknown-1"), // 00
 
-                new Int8TypeDef("unknown-04"), // 04
-                new Int8TypeDef("unknown-0B"), // 0B
-                new Int8TypeDef("unknown-C0"), // C0
-                new Int8TypeDef("unknown-80"), // 80
-                new Int32TypeDef("unknown-02"), // 02 00 00 00
-                new Int8TypeDef("unknown-00"), // 00
-                new Int8TypeDef("unknown-00"), // 00
-                new Int8TypeDef("unknown-00"), // 00
-                new Int8TypeDef("unknown-07"), // 07
-                new Int8TypeDef("unknown-0E"), // 0E
-                new Int8TypeDef("unknown-07"), // 07
-                new Int8TypeDef("unknown-00"), // 00
+                new Int8TypeDef("unknown-2"), // 04 // anim, seqtrans, monanim, seqnum = reihenfolge verdreht
+                new Int8TypeDef("unknown-3"), // 0B
+                new Int8TypeDef("unknown-4"), // C0
+                new Int8TypeDef("unknown-5"), // 80
 
-                new Int32TypeDef("unknown-02 00 00 00"), // 02 00 00 00
-                new Int32TypeDef("unknown-2F 00 00 00"), // 2F 00 00 00
-                new Int32TypeDef("unknown-00 00 00 00"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int8TypeDef("unknown-6"), // 02 00 00 00
+                new Int8TypeDef("unknown-7"), //  00
+                new Int8TypeDef("unknown-8"), //  00
 
-                new Int32TypeDef("unknown0"), // 00 00 00 00
-                new Int32TypeDef("unknown1"), // 00 00 00 00
-                new Int32TypeDef("unknown2"), // 00 00 00 00
-                new Int32TypeDef("unknown3"), // 00 00 00 00
+                new Int8TypeDef("charclass"), //  00
 
-                new Int32TypeDef("unknown4"), // 00 00 00 00
-                new Int32TypeDef("unknown5"), // FF FF FF FF
-                new Int32TypeDef("unknown6"), // FF FF FF FF
-                new Int32TypeDef("unknown7"), // FF FF FF FF
+                new Int8TypeDef("unknown-0"), // 00
+                new Int8TypeDef("unknown-10"), // 00
+                new Int8TypeDef("unknown-11"), // 00
+                new Int8TypeDef("unknown-12"), // 07
+                new Int8TypeDef("unknown-13"), // 0E
+                new Int8TypeDef("unknown-14"), // 07
+                new Int8TypeDef("unknown-15"), // 00
 
-                new Int16TypeDef("unknown8"), // 00 00
+                new Int32TypeDef("unknown-16"), // 02 00 00 00
+                new Int32TypeDef("unknown-17"), // 2F 00 00 00
+                new Int32TypeDef("unknown-18"), // 00 00 00 00
+                new Int32TypeDef("unknown-19"), // 00 00 00 00
+
+                new Int32TypeDef("unknown-20"), // 00 00 00 00
+                new Int32TypeDef("unknown-21"), // 00 00 00 00
+                new Int32TypeDef("unknown-22"), // 00 00 00 00
+                new Int32TypeDef("unknown-23"), // 00 00 00 00
+
+                new Int32TypeDef("unknown-24"), // 00 00 00 00
+                new Int32TypeDef("unknown-25"), // FF FF FF FF
+                new Int32TypeDef("unknown-26"), // FF FF FF FF
+                new Int32TypeDef("unknown-27"), // FF FF FF FF
+
+                new Int16TypeDef("unknown-28"), // 00 00
                 new Int16TypeDef("cltmissile"), // 1B 00
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown-00 00 00 00"), // 00 00 00 00
+                new Int32TypeDef("unknown-29"), // FF FF FF FF
+                new Int32TypeDef("unknown-30"), // FF FF FF FF
+                new Int32TypeDef("unknown-31"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int32TypeDef("unknown-32"), // FF FF FF FF
+                new Int32TypeDef("unknown-33"), // FF FF FF FF
+                new Int32TypeDef("unknown-34"), // FF FF FF FF
+                new Int32TypeDef("unknown-35"), // FF FF FF FF
 
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int32TypeDef("unknown-36"), // FF FF FF FF
+                new Int32TypeDef("unknown-37"), // FF FF FF FF
+                new Int32TypeDef("unknown-38"), // FF FF FF FF
+                new Int32TypeDef("unknown-39"), // FF FF FF FF
 
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int32TypeDef("unknown-40"), // FF FF FF FF
+                new Int32TypeDef("unknown-41"), // FF FF FF FF
+                new Int32TypeDef("unknown-42"), // FF FF FF FF
+                new Int32TypeDef("unknown-43"), // FF FF FF FF
 
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int16TypeDef("unknown"), // FF FF
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown-FF FF"), // FF FF
-                new Int16TypeDef("unknown-00 00"), // 00 00
+                new Int32TypeDef("unknown-44"), // FF FF FF FF
+                new Int16TypeDef("unknown-45"), // FF FF
+                new Int16TypeDef("auraeventfunc1", 0), // 00 00
+                new Int16TypeDef("unknown-47"), // 00 00
+                new Int16TypeDef("unknown-48"), // 00 00
+                new Int16TypeDef("unknown-49"), // FF FF
+                new Int16TypeDef("unknown-50"), // 00 00
 
-                new Int16TypeDef("unknown-00 00"), // 00 00
-                new Int16TypeDef("unknown-FF FF"), // FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
+                new Int16TypeDef("unknown-51"), // 00 00
+                new Int16TypeDef("unknown-52"), // FF FF
+                new Int32TypeDef("unknown-53"), // FF FF FF FF
+                new Int32TypeDef("unknown-54"), // FF FF FF FF
+                new Int32TypeDef("unknown-55"), // FF FF FF FF
 
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int16TypeDef("unknown-FF FF"), // FF FF
-                new Int16TypeDef("unknown-00 00"), // 00 00
+                new Int32TypeDef("unknown-56"), // FF FF FF FF
+                new Int32TypeDef("unknown-57"), // FF FF FF FF
+                new Int32TypeDef("unknown-58"), // FF FF FF FF
+                new Int16TypeDef("unknown-59"), // FF FF
+                new Int16TypeDef("unknown-60"), // 00 00
 
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
+                new Int32TypeDef("unknown-61"), // FF FF FF FF
+                new Int32TypeDef("unknown-62"), // FF FF FF FF
+                new Int32TypeDef("unknown-63"), // FF FF FF FF
+                new Int32TypeDef("unknown-64"), // FF FF FF FF
 
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
+                new Int32TypeDef("unknown-65"), // FF FF FF FF
+                new Int32TypeDef("unknown-66"), // FF FF FF FF
+                new Int32TypeDef("unknown-67"), // FF FF FF FF
+                new Int32TypeDef("unknown-68"), // FF FF FF FF
 
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
+                new Int32TypeDef("unknown-69"), // FF FF FF FF
+                new Int32TypeDef("unknown-70"), // FF FF FF FF
+                new Int32TypeDef("unknown-71"), // FF FF FF FF
+                new Int32TypeDef("unknown-72"), // FF FF FF FF
 
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
+                new Int32TypeDef("unknown-73"), // FF FF FF FF
+                new Int32TypeDef("unknown-74"), // FF FF FF FF
+                new Int32TypeDef("unknown-75"), // FF FF FF FF
+                new Int32TypeDef("unknown-76"), // FF FF FF FF
 
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int16TypeDef("unknown-FF FF"), // FF FF
-                new Int16TypeDef("unknown-00 00"), // 00 00
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
+                new Int32TypeDef("unknown-77"), // FF FF FF FF
+                new Int32TypeDef("unknown-78"), // FF FF FF FF
+                new Int16TypeDef("unknown-79"), // FF FF
+                new Int16TypeDef("unknown-80"), // 00 00
+                new Int32TypeDef("unknown-81"), // FF FF FF FF
 
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
-                new Int32TypeDef("unknown-FF FF FF FF"), // FF FF FF FF
+                new Int32TypeDef("unknown-82"), // FF FF FF FF
+                new Int32TypeDef("unknown-83"), // FF FF FF FF
+                new Int32TypeDef("unknown-84"), // FF FF FF FF
+                new Int32TypeDef("unknown-85"), // FF FF FF FF
 
-                new Int16TypeDef("unknown-00 00"), // 00 00
-                new Int16TypeDef("unknown-FF FF"), // FF FF
-                new Int16TypeDef("unknown-1B 00"), // 1B 00
-                new Int16TypeDef("unknown"), // FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int16TypeDef("unknown"), // FF FF
-                new Int16TypeDef("unknown"), // 00 00
+                new Int16TypeDef("unknown-86"), // 00 00
+                new Int16TypeDef("unknown-87"), // FF FF
+                new Int16TypeDef("unknown-88"), // 1B 00
+                new Int16TypeDef("unknown-89"), // FF FF
+                new Int32TypeDef("unknown-90"), // FF FF FF FF
+                new Int16TypeDef("unknown-91"), // FF FF
+                new Int16TypeDef("unknown-92"), // 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("cltdofunc"), // 00 00 00 00
 
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown"), // FF FF
-                new Int16TypeDef("unknown"), // FF FF
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown"), // FF FF
-                new Int16TypeDef("unknown"), // 00 00
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int32TypeDef("unknown-93"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("stsound"), // 00 00 00 00
+                new Int32TypeDef("dosound"), // 00 00 00 00
 
-                new Int16TypeDef("unknown"), // FF FF
-                new Int16TypeDef("unknown"), // 00 00
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int16TypeDef("unknown-94"), // 00 00
+                new Int16TypeDef("unknown-95"), // FF FF
+                new Int16TypeDef("unknown-96"), // FF FF
+                new Int16TypeDef("unknown-97"), // 00 00
+                new Int16TypeDef("unknown-98"), // FF FF
+                new Int16TypeDef("unknown-99"), // 00 00
+                new Int32TypeDef("unknown-100"), // FF FF FF FF
+
+                new Int32TypeDef("unknown-101"), // FF FF FF FF
+                new Int32TypeDef("unknown-102"), // FF FF FF FF
+                new Int32TypeDef("unknown-103"), // FF FF FF FF
+                new Int32TypeDef("unknown-104"), // 00 00 00 00
+
+                new Int16TypeDef("unknown-105"), // FF FF
+                new Int16TypeDef("unknown-106"), // 00 00
+                new Int32TypeDef("unknown-107"), // FF FF FF FF
                 new Int32TypeDef("maxlvl"), // 14 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-108"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int32TypeDef("unknown-109"), // 00 00 00 00
+                new Int32TypeDef("unknown-110"), // FF FF FF FF
+                new Int32TypeDef("unknown-111"), // FF FF FF FF
+                new Int32TypeDef("unknown-112"), // FF FF FF FF
 
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-113"), // FF FF FF FF
+                new Int32TypeDef("unknown-114"), // FF FF FF FF
+                new Int32TypeDef("unknown-115"), // FF FF FF FF
+                new Int32TypeDef("unknown-116"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-117"), // 00 00 00 00
+                new Int32TypeDef("unknown-118"), // 00 00 00 00
+                new Int32TypeDef("unknown-119"), // 00 00 00 00
+                new Int32TypeDef("unknown-120"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-121"), // 00 00 00 00
+                new Int32TypeDef("unknown-122"), // 00 00 00 00
+                new Int32TypeDef("unknown-123"), // 00 00 00 00
+                new Int32TypeDef("unknown-124"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-125"), // 00 00 00 00
+                new Int32TypeDef("unknown-126"), // 00 00 00 00
+                new Int32TypeDef("unknown-127"), // 00 00 00 00
+                new Int32TypeDef("unknown-128"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // 01 00 00 00 ???? = 1 
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-129"), // 00 00 00 00
+                new Int32TypeDef("unknown-130"), // FF FF FF FF
 
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown"), // FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("reqlevel"), // 01 00 00 00 ???? = 1
+
+                new Int32TypeDef("unknown-131"), // 00 00 00 00
+
+                new Int16TypeDef("unknown-132"), // 00 00
+
+                new Int16TypeDef("reqskill1"), // FF FF
+                new Int16TypeDef("reqskill2"), // FF FF
+                new Int16TypeDef("reqskill3"), // FF FF
+
+                new Int16TypeDef("unknown-133"), // 00 00
+                new Int16TypeDef("minmana"), // 00 00
+
                 new Int16TypeDef("manashift"), // 05 00 ???? = 5
                 new Int16TypeDef("mana"), // 0C 00 ???? = 12
+                new Int16TypeDef("lvlmana"), // FF FF
 
-                new Int16TypeDef("unknown"), // FF FF
-                new Int16TypeDef("unknown"), // 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int16TypeDef("unknown-134"), // 00 00
+                new Int32TypeDef("unknown-135"), // 00 00 00 00
+                new Int32TypeDef("unknown-136"), // FF FF FF FF
+                new Int32TypeDef("unknown-137"), // FF FF FF FF
 
-                new Int32TypeDef("unknown"), // 06 00 00 00 ???? = 6
+                new Int32TypeDef("unknown-138"), // 06 00 00 00 ???? = 6
                 new Int32TypeDef("ToHit"), // 0A 00 00 00 ???? = 10 
                 new Int32TypeDef("LevToHit"), // 09 00 00 00 ???? = 9
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int32TypeDef("unknown-139"), // FF FF FF FF
 
                 new Int8TypeDef("HitShift"), // 08 ???? = 8
                 new Int16TypeDef("SrcDam"), // 80 00 ???? = 128
-                new Int8TypeDef("unknown"), // 00
+                new Int8TypeDef("unknown-140"), // 00
                 new Int32TypeDef("MinDam"), // 01 00 00 00
                 new Int32TypeDef("MinLevDam1"), // 01 00 00 00
                 new Int32TypeDef("MinLevDam2"), // 01 00 00 00
@@ -226,46 +243,44 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 new Int32TypeDef("MaxLevDam4"), // 01 00 00 00
 
                 new Int32TypeDef("MaxLevDam5"), // 01 00 00 00
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-141"), // FF FF FF FF
+                new Int32TypeDef("EType"), // 00 00 00 00 - elemtypes.txt indexed
+                new Int32TypeDef("EMin"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("EMax"), // 00 00 00 00
+                new Int32TypeDef("EMinLev1"), // 00 00 00 00
+                new Int32TypeDef("EMinLev2"), // 00 00 00 00
+                new Int32TypeDef("EMinLev3"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("EMinLev4"), // 00 00 00 00
+                new Int32TypeDef("EMinLev5"), // 00 00 00 00
+                new Int32TypeDef("EMaxLev1"), // 00 00 00 00
+                new Int32TypeDef("EMaxLev2"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // FF FF FF FF
+                new Int32TypeDef("EMaxLev3"), // 00 00 00 00
+                new Int32TypeDef("EMaxLev4"), // 00 00 00 00
+                new Int32TypeDef("EMaxLev5"), // 00 00 00 00
+                new Int32TypeDef("unknown-142"), // FF FF FF FF ???? EDmgSymPerCalc
 
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-143"), // 00 00 00 00
+                new Int32TypeDef("unknown-144"), // 00 00 00 00
+                new Int32TypeDef("unknown-145"), // 00 00 00 00
+                new Int32TypeDef("unknown-146"), // 00 00 00 00
 
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown"), // FF FF
-                new Int32TypeDef("unknown"), // FF FF FF FF
-                new Int32TypeDef("unknown"), // 00 00 00 00
+                new Int32TypeDef("unknown-147"), // FF FF FF FF
+                new Int16TypeDef("unknown-148"), // 00 00
+                new Int16TypeDef("unknown-149"), // FF FF
+                new Int32TypeDef("unknown-150"), // FF FF FF FF
+                new Int32TypeDef("unknown-151"), // 00 00 00 00
 
                 new Int32TypeDef("cost mult"), // 00 00 00 00
                 new Int32TypeDef("cost add"), // E8 03 00 00
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown"), // 00 00
-                new Int16TypeDef("unknown"), // 00 00
+                new Int16TypeDef("unknown-152"), // 00 00
+                new Int16TypeDef("unknown-153"), // 00 00
+                new Int16TypeDef("unknown-154"), // 00 00
                 new Int16TypeDef("*eol") // 00 00
-                // new Int32TypeDef("*eol"), // 00 00 00 00
-                // new Int32TypeDef("unknown") // 00 00 00 00
 
-                // new UnusedTypeDef("charclass"),
+                //// new UnusedTypeDef("charclass"),
                 // new UnusedTypeDef("skilldesc"),
                 // new UnusedTypeDef("srvstfunc"),
                 // new UnusedTypeDef("srvdofunc"),
@@ -357,11 +372,11 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 // new UnusedTypeDef("sumumod"),
                 // new UnusedTypeDef("sumoverlay"),
                 // new UnusedTypeDef("stsuccessonly"),
-                // new UnusedTypeDef("stsound"),
+                //// new UnusedTypeDef("stsound"),
                 // new UnusedTypeDef("stsoundclass"),
                 // new UnusedTypeDef("stsounddelay"),
                 // new UnusedTypeDef("weaponsnd"),
-                // new UnusedTypeDef("dosound"),
+                //// new UnusedTypeDef("dosound"),
                 // new UnusedTypeDef("dosound a"),
                 // new UnusedTypeDef("dosound b"),
                 // new UnusedTypeDef("tgtoverlay"),
@@ -372,7 +387,7 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 // new UnusedTypeDef("cltoverlaya"),
                 // new UnusedTypeDef("cltoverlayb"),
                 // new UnusedTypeDef("cltstfunc"),
-                // new UnusedTypeDef("cltdofunc"),
+                //// new UnusedTypeDef("cltdofunc"),
                 // new UnusedTypeDef("cltstopfunc"),
                 // new UnusedTypeDef("cltprgfunc1"),
                 // new UnusedTypeDef("cltprgfunc2"),
@@ -458,10 +473,10 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 // new UnusedTypeDef("alwayshit"),
                 // new UnusedTypeDef("usemanaondo"),
                 // new UnusedTypeDef("startmana"),
-                // new UnusedTypeDef("minmana"),
+                //// new UnusedTypeDef("minmana"),
                 // // new UnusedTypeDef("manashift"),
                 // // new UnusedTypeDef("mana"),
-                // new UnusedTypeDef("lvlmana"),
+                //// new UnusedTypeDef("lvlmana"),
                 // new UnusedTypeDef("interrupt"),
                 // new UnusedTypeDef("InTown"),
                 // new UnusedTypeDef("aura"),
@@ -532,19 +547,19 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 // new UnusedTypeDef("MaxLevDam4"),
                 // new UnusedTypeDef("MaxLevDam5"),
                 // new UnusedTypeDef("DmgSymPerCalc"),
-                // new UnusedTypeDef("EType"),
-                // new UnusedTypeDef("EMin"),
-                // new UnusedTypeDef("EMinLev1"),
-                // new UnusedTypeDef("EMinLev2"),
-                // new UnusedTypeDef("EMinLev3"),
-                // new UnusedTypeDef("EMinLev4"),
-                // new UnusedTypeDef("EMinLev5"),
-                // new UnusedTypeDef("EMax"),
-                // new UnusedTypeDef("EMaxLev1"),
-                // new UnusedTypeDef("EMaxLev2"),
-                // new UnusedTypeDef("EMaxLev3"),
-                // new UnusedTypeDef("EMaxLev4"),
-                // new UnusedTypeDef("EMaxLev5"),
+                //// new UnusedTypeDef("EType"),
+                //// new UnusedTypeDef("EMin"),
+                //// new UnusedTypeDef("EMinLev1"),
+                //// new UnusedTypeDef("EMinLev2"),
+                //// new UnusedTypeDef("EMinLev3"),
+                //// new UnusedTypeDef("EMinLev4"),
+                //// new UnusedTypeDef("EMinLev5"),
+                //// new UnusedTypeDef("EMax"),
+                //// new UnusedTypeDef("EMaxLev1"),
+                //// new UnusedTypeDef("EMaxLev2"),
+                //// new UnusedTypeDef("EMaxLev3"),
+                //// new UnusedTypeDef("EMaxLev4"),
+                //// new UnusedTypeDef("EMaxLev5"),
                 // new UnusedTypeDef("EDmgSymPerCalc"),
                 // new UnusedTypeDef("ELen"),
                 // new UnusedTypeDef("ELevLen1"),
@@ -555,7 +570,7 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 // new UnusedTypeDef("aibonus"),
                 // // new UnusedTypeDef("cost mult"),
                 // // new UnusedTypeDef("cost add"),
-                //// new UnusedTypeDef("*eol")
+                // // new UnusedTypeDef("*eol")
             ];
         }
 

@@ -13,6 +13,11 @@ namespace Diablo2BinToTxtConverter
                 sb.Append($"{column}\t");
             }
 
+            foreach (ParsedLine.ValuePair? value in parsedLines.First().Values.Where(x => x.Key.StartsWith("unknown")))
+            {
+                sb.Append($"{value.Key}\t");
+            }
+
             return sb.ToString();
         }
 
@@ -24,6 +29,11 @@ namespace Diablo2BinToTxtConverter
             {
                 ParsedLine.ValuePair? value = parsedLine.Values.FirstOrDefault(x => x.Key == column);
                 sb.Append($"{value?.Value}\t");
+            }
+
+            foreach (ParsedLine.ValuePair? value in parsedLine.Values.Where(x => x.Key.StartsWith("unknown")))
+            {
+                sb.Append($"{value.Value}\t");
             }
 
             return sb.ToString();

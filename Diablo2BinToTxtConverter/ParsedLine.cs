@@ -8,11 +8,11 @@
 
         public IEnumerable<ValuePair> Values => _values.AsReadOnly();
 
-        public void AddValue(string columnName, object value)
+        public void AddValue(int byteIndex, string columnName, object value)
         {
-            _values.Add(new ValuePair(columnName, value));
+            _values.Add(new ValuePair(byteIndex, columnName, value));
         }
 
-        public record ValuePair(string Key, object Value);
+        public record ValuePair(int ByteIndex, string Key, object Value);
     }
 }

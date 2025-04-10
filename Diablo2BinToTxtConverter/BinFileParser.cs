@@ -23,6 +23,7 @@ namespace Diablo2BinToTxtConverter
 
             while (stream.Position != stream.Length)
             {
+                int byteIndex = 0;
                 ParsedLine parsedLine = new();
 
                 foreach (ITypeDef typeDef in binFile.TypeDef)
@@ -31,10 +32,18 @@ namespace Diablo2BinToTxtConverter
 
                     value = CheckForKeyedType(typeDef, parsedKeys, value);
 
-                    parsedLine.AddValue(typeDef.Column,
+                    parsedLine.AddValue(byteIndex, typeDef.Column,
                         typeDef.NullValue == null || !Equals(value.ToString(), typeDef.NullValue.ToString())
                             ? value
                             : "");
+
+                    byteIndex++;
+                }
+
+                ParsedLine.ValuePair? skill = parsedLine.Values.FirstOrDefault(x => x.Value.ToString() == "Meteor");
+                if (skill != null)
+                {
+                    Console.WriteLine($"{skill.Key}");
                 }
 
                 result.Add(parsedLine);
