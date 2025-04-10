@@ -25,87 +25,87 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 new UnusedTypeDef("Hireling"),
                 new UnusedTypeDef("*SubType"),
 
-                new UInt32TypeDef("Version"), // 00 00 00 00
-                new UInt32TypeDef("Id"), // 00 00 00 00
-                new UInt32TypeDef("Class"), // 0F 01 00 00
-                new UInt32TypeDef("Act"), // 01 00 00 00
-                new UInt32TypeDef("Difficulty"), // 01 00 00 00
+                new Int32TypeDef("Version"), // 00 00 00 00
+                new Int32TypeDef("Id"), // 00 00 00 00
+                new Int32TypeDef("Class"), // 0F 01 00 00
+                new Int32TypeDef("Act"), // 01 00 00 00
+                new Int32TypeDef("Difficulty"), // 01 00 00 00
 
-                new UInt32TypeDef("Seller"), // 96 00 00 00
-                new UInt32TypeDef("Gold"), // 64 00 00 00
-                new UInt32TypeDef("Level"), // 03 00 00 00
-                new UInt32TypeDef("Exp/Lvl"), // 64 00 00 00
-                new UInt32TypeDef("HP"), // 2D 00 00 00
-                new UInt32TypeDef("HP/Lvl"), // 08 00 00 00
-                new UInt32TypeDef("Defense"), // 0F 00 00 00
-                new UInt32TypeDef("Def/Lvl"), // 06 00 00 00
-                new UInt32TypeDef("Str"), // 23 00 00 00
-                new UInt32TypeDef("Str/Lvl"), // 0A 00 00 00
-                new UInt32TypeDef("Dex"), // 2D 00 00 00
-                new UInt32TypeDef("Dex/Lvl"), // 10 00 00 00
-                new UInt32TypeDef("AR"), // 0A 00 00 00
-                new UInt32TypeDef("AR/Lvl"), // 0A 00 00 00
-                new UInt32TypeDef("Dmg-Min"), // 01 00 00 00
-                new UInt32TypeDef("Dmg-Max"), // 03 00 00 00
-                new UInt32TypeDef("Dmg/Lvl"), // 02 00 00 00
-                new UInt32TypeDef("ResistFire"), // 00 00 00 00
-                new UInt32TypeDef("ResistFire/Lvl"), // 08 00 00 00
-                new UInt32TypeDef("ResistCold"), // 00 00 00 00
-                new UInt32TypeDef("ResistCold/Lvl"), // 08 00 00 00
-                new UInt32TypeDef("ResistLightning"), // 00 00 00 00
-                new UInt32TypeDef("ResistLightning/Lvl"), // 08 00 00 00
-                new UInt32TypeDef("ResistPoison"), // 00 00 00 00
-                new UInt32TypeDef("ResistPoison/Lvl"), // 08 00 00 00
+                new Int32TypeDef("Seller"), // 96 00 00 00
+                new Int32TypeDef("Gold"), // 64 00 00 00
+                new Int32TypeDef("Level"), // 03 00 00 00
+                new Int32TypeDef("Exp/Lvl"), // 64 00 00 00
+                new Int32TypeDef("HP"), // 2D 00 00 00
+                new Int32TypeDef("HP/Lvl"), // 08 00 00 00
+                new Int32TypeDef("Defense"), // 0F 00 00 00
+                new Int32TypeDef("Def/Lvl"), // 06 00 00 00
+                new Int32TypeDef("Str"), // 23 00 00 00
+                new Int32TypeDef("Str/Lvl"), // 0A 00 00 00
+                new Int32TypeDef("Dex"), // 2D 00 00 00
+                new Int32TypeDef("Dex/Lvl"), // 10 00 00 00
+                new Int32TypeDef("AR"), // 0A 00 00 00
+                new Int32TypeDef("AR/Lvl"), // 0A 00 00 00
+                new Int32TypeDef("Dmg-Min"), // 01 00 00 00
+                new Int32TypeDef("Dmg-Max"), // 03 00 00 00
+                new Int32TypeDef("Dmg/Lvl"), // 02 00 00 00
+                new Int32TypeDef("ResistFire"), // 00 00 00 00
+                new Int32TypeDef("ResistFire/Lvl"), // 08 00 00 00
+                new Int32TypeDef("ResistCold"), // 00 00 00 00
+                new Int32TypeDef("ResistCold/Lvl"), // 08 00 00 00
+                new Int32TypeDef("ResistLightning"), // 00 00 00 00
+                new Int32TypeDef("ResistLightning/Lvl"), // 08 00 00 00
+                new Int32TypeDef("ResistPoison"), // 00 00 00 00
+                new Int32TypeDef("ResistPoison/Lvl"), // 08 00 00 00
 
-                new UInt32TypeDef("DefaultChance"), // 4B 00 00 00
+                new Int32TypeDef("DefaultChance"), // 4B 00 00 00
 
-                new UInt32TypeDef("HiringMaxLevelDifference"), // 05 00 00 00 = 5
-                new UInt32TypeDef("resurrectcostmultiplier"), // 0F 00 00 00 = 15
-                new UInt32TypeDef("resurrectcostdivisor"), // 02 00 00 00 = 2 
-                new UInt32TypeDef("resurrectcostmax"), // 50 C3 00 00 = 50000
-                new UInt32TypeDef("equivalentcharclass", 255), // 00 00 00 00 = 0 / playerclass.txt
+                new Int32TypeDef("HiringMaxLevelDifference"), // 05 00 00 00 = 5
+                new Int32TypeDef("resurrectcostmultiplier"), // 0F 00 00 00 = 15
+                new Int32TypeDef("resurrectcostdivisor"), // 02 00 00 00 = 2 
+                new Int32TypeDef("resurrectcostmax"), // 50 C3 00 00 = 50000
+                new Int32TypeDef("equivalentcharclass", 255), // 00 00 00 00 = 0 / playerclass.txt
 
-                new UInt32TypeDef("Skill1", 4294967295), // 08 00 00 00 / skills.txt
-                new UInt32TypeDef("Skill2", 4294967295), // 07 00 00 00 / skills.txt
-                new UInt32TypeDef("Skill3", 4294967295), // FF FF FF FF / skills.txt
-                new UInt32TypeDef("Skill4", 4294967295), // FF FF FF FF / skills.txt
-                new UInt32TypeDef("Skill5", 4294967295), // FF FF FF FF / skills.txt
-                new UInt32TypeDef("Skill6", 4294967295), // FF FF FF FF / skills.txt
+                new Int32TypeDef("Skill1", 4294967295), // 08 00 00 00 / skills.txt
+                new Int32TypeDef("Skill2", 4294967295), // 07 00 00 00 / skills.txt
+                new Int32TypeDef("Skill3", 4294967295), // FF FF FF FF / skills.txt
+                new Int32TypeDef("Skill4", 4294967295), // FF FF FF FF / skills.txt
+                new Int32TypeDef("Skill5", 4294967295), // FF FF FF FF / skills.txt
+                new Int32TypeDef("Skill6", 4294967295), // FF FF FF FF / skills.txt
 
-                new UInt32TypeDef("Chance1", 0), // 0A 00 00 00
-                new UInt32TypeDef("Chance2", 0), // 19 00 00 00
-                new UInt32TypeDef("Chance3", 0), // 00 00 00 00
-                new UInt32TypeDef("Chance4", 0), // 00 00 00 00
-                new UInt32TypeDef("Chance5", 0), // 00 00 00 00
-                new UInt32TypeDef("Chance6", 0), // 00 00 00 00
+                new Int32TypeDef("Chance1", 0), // 0A 00 00 00
+                new Int32TypeDef("Chance2", 0), // 19 00 00 00
+                new Int32TypeDef("Chance3", 0), // 00 00 00 00
+                new Int32TypeDef("Chance4", 0), // 00 00 00 00
+                new Int32TypeDef("Chance5", 0), // 00 00 00 00
+                new Int32TypeDef("Chance6", 0), // 00 00 00 00
 
-                new UInt32TypeDef("ChancePerLvl1", 0), // 00 00 00 00
-                new UInt32TypeDef("ChancePerLvl2", 0), // 08 00 00 00
-                new UInt32TypeDef("ChancePerLvl3", 0), // 00 00 00 00
-                new UInt32TypeDef("ChancePerLvl4", 0), // 00 00 00 00
-                new UInt32TypeDef("ChancePerLvl5", 0), // 00 00 00 00
-                new UInt32TypeDef("ChancePerLvl6", 0), // 00 00 00 00
+                new Int32TypeDef("ChancePerLvl1", 0), // 00 00 00 00
+                new Int32TypeDef("ChancePerLvl2", 0), // 08 00 00 00
+                new Int32TypeDef("ChancePerLvl3", 0), // 00 00 00 00
+                new Int32TypeDef("ChancePerLvl4", 0), // 00 00 00 00
+                new Int32TypeDef("ChancePerLvl5", 0), // 00 00 00 00
+                new Int32TypeDef("ChancePerLvl6", 0), // 00 00 00 00
 
-                new UInt8TypeDef("Mode1", 0), // 04
-                new UInt8TypeDef("Mode2", 0), // 04
-                new UInt8TypeDef("Mode3", 0), // 00
-                new UInt8TypeDef("Mode4", 0), // 00
-                new UInt8TypeDef("Mode5", 0), // 00
-                new UInt8TypeDef("Mode6", 0), // 00
+                new Int8TypeDef("Mode1", 0), // 04
+                new Int8TypeDef("Mode2", 0), // 04
+                new Int8TypeDef("Mode3", 0), // 00
+                new Int8TypeDef("Mode4", 0), // 00
+                new Int8TypeDef("Mode5", 0), // 00
+                new Int8TypeDef("Mode6", 0), // 00
 
-                new UInt8TypeDef("Level1", 0), // 01
-                new UInt8TypeDef("Level2", 0), // 01
-                new UInt8TypeDef("Level3", 0), // 00
-                new UInt8TypeDef("Level4", 0), // 00
-                new UInt8TypeDef("Level5", 0), // 00
-                new UInt8TypeDef("Level6", 0), // 00
+                new Int8TypeDef("Level1", 0), // 01
+                new Int8TypeDef("Level2", 0), // 01
+                new Int8TypeDef("Level3", 0), // 00
+                new Int8TypeDef("Level4", 0), // 00
+                new Int8TypeDef("Level5", 0), // 00
+                new Int8TypeDef("Level6", 0), // 00
 
-                new UInt8TypeDef("LvlPerLvl1", 0), // 0A
-                new UInt8TypeDef("LvlPerLvl2", 0), // 0A
-                new UInt8TypeDef("LvlPerLvl3", 0), // 00
-                new UInt8TypeDef("LvlPerLvl4", 0), // 00
-                new UInt8TypeDef("LvlPerLvl5", 0), // 00
-                new UInt8TypeDef("LvlPerLvl6", 0), // 00
+                new Int8TypeDef("LvlPerLvl1", 0), // 0A
+                new Int8TypeDef("LvlPerLvl2", 0), // 0A
+                new Int8TypeDef("LvlPerLvl3", 0), // 00
+                new Int8TypeDef("LvlPerLvl4", 0), // 00
+                new Int8TypeDef("LvlPerLvl5", 0), // 00
+                new Int8TypeDef("LvlPerLvl6", 0), // 00
 
                 new KeyedTypeDef("HireDesc", [
                     "skills",
@@ -119,7 +119,7 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                     "NameLast",
                     3 * 16), // 6D 65 72 63 34 31 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 
-                new UInt32TypeDef("Unknown") // 00 00 00 00
+                new Int32TypeDef("Unknown") // 00 00 00 00
             ];
         }
 

@@ -10,11 +10,12 @@ namespace Diablo2BinToTxtConverter
         {
             Dictionary<string, List<KeyFileStructure>> parsedKeys = LoadParsedKeys(binFile);
 
-            using FileStream stream = File.Open(binFile.FilePath, FileMode.Open);
+            using FileStream stream = File.Open(binFile.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
             using BinaryReader reader = new(stream, Encoding.ASCII, false);
 
             // Read file-version and drop it
             _ = reader.ReadInt32();
+            // stream.Seek(4156, SeekOrigin.Begin);
 
             List<ParsedLine> result =
             [
@@ -99,10 +100,11 @@ namespace Diablo2BinToTxtConverter
             switch (type)
             {
                 case UnusedTypeDef: return string.Empty;
-                case KeyedTypeDef: return reader.ReadUInt16();
-                case UInt8TypeDef: return reader.ReadSByte();
-                case UInt16TypeDef: return reader.ReadUInt16();
-                case UInt32TypeDef: return reader.ReadUInt32();
+                case KeyedTypeDef: return reader.ReadInt16();
+                case Int8TypeDef: return reader.ReadByte();
+                case Int16TypeDef: return reader.ReadInt16();
+                case Int32TypeDef: return reader.ReadInt32();
+                case Int64TypeDef: return reader.ReadInt64();
                 case StringTypeDef stringTypeDef:
                     {
                         char[] chars = reader.ReadChars(stringTypeDef.Length);

@@ -22,11 +22,11 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 new UnusedTypeDef("Name"),
                 new UnusedTypeDef("*Shrine Type"),
                 new UnusedTypeDef("*Effect"),
-                new UInt32TypeDef("Code"),
-                new UInt32TypeDef("Arg0"),
-                new UInt32TypeDef("Arg1"),
-                new UInt32TypeDef("Duration in frames"),
-                new UInt16TypeDef("reset time in minutes"),
+                new Int32TypeDef("Code"),
+                new Int32TypeDef("Arg0"),
+                new Int32TypeDef("Arg1"),
+                new Int32TypeDef("Duration in frames"),
+                new Int16TypeDef("reset time in minutes"),
                 new UnusedTypeDef("rarity"),
                 new KeyedTypeDef("StringName", [
                     "shrines"
@@ -34,8 +34,8 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 new KeyedTypeDef("StringPhrase", [
                     "shrines"
                 ], typeof(ushort), "dummy"),
-                new UInt16TypeDef("effectclass"),
-                new UInt32TypeDef("LevelMin")
+                new Int16TypeDef("effectclass"),
+                new Int32TypeDef("LevelMin")
             ];
         }
 

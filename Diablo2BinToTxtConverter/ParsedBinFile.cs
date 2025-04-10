@@ -22,8 +22,8 @@ namespace Diablo2BinToTxtConverter
 
             foreach (string? column in binFile.Columns)
             {
-                ParsedLine.ValuePair value = parsedLine.Values.First(x => x.Key == column);
-                sb.Append($"{value.Value}\t");
+                ParsedLine.ValuePair? value = parsedLine.Values.FirstOrDefault(x => x.Key == column);
+                sb.Append($"{value?.Value}\t");
             }
 
             return sb.ToString();
@@ -53,7 +53,7 @@ namespace Diablo2BinToTxtConverter
 
         public void ExportFile()
         {
-            File.WriteAllText($"{Path.GetFileNameWithoutExtension(binFile.FilePath)}.txt", ToString());
+            File.WriteAllText($"parsed_{Path.GetFileNameWithoutExtension(binFile.FilePath)}.txt", ToString());
         }
     }
 }
