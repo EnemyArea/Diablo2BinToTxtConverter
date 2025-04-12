@@ -260,18 +260,19 @@ namespace Diablo2BinToTxtConverter.BinFileDefinitions
                 new Int32TypeDef("EMaxLev3"), // 00 00 00 00
                 new Int32TypeDef("EMaxLev4"), // 00 00 00 00
                 new Int32TypeDef("EMaxLev5"), // 00 00 00 00
-                new Int32TypeDef("unknown-142"), // FF FF FF FF ???? EDmgSymPerCalc
+                new Int32TypeDef("EDmgSymPerCalc", -1), // FF FF FF FF ???? EDmgSymPerCalc
 
-                new Int32TypeDef("unknown-143"), // 00 00 00 00
-                new Int32TypeDef("unknown-144"), // 00 00 00 00
-                new Int32TypeDef("unknown-145"), // 00 00 00 00
-                new Int32TypeDef("unknown-146"), // 00 00 00 00
+                new Int32TypeDef("ELen", 0), // 00 00 00 00
+                new Int32TypeDef("ELevLen1", 0), // 00 00 00 00
+                new Int32TypeDef("ELevLen2", 0), // 00 00 00 00
+                new Int32TypeDef("ELevLen3", 0), // 00 00 00 00
 
-                new Int32TypeDef("unknown-147"), // FF FF FF FF
+                new Int32TypeDef("ELenSymPerCalc", -1), // FF FF FF FF
                 new Int16TypeDef("unknown-148"), // 00 00
                 new Int16TypeDef("unknown-149"), // FF FF
                 new Int32TypeDef("unknown-150"), // FF FF FF FF
-                new Int32TypeDef("unknown-151"), // 00 00 00 00
+                new Int16TypeDef("aitype", 0), // 00 00
+                new Int16TypeDef("aibonus", 0), // 00 00
 
                 new Int32TypeDef("cost mult"), // 00 00 00 00
                 new Int32TypeDef("cost add"), // E8 03 00 00
